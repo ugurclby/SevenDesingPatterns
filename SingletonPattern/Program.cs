@@ -3,15 +3,13 @@
 using SingletonPattern;
 
 var cities1 = CityProvider.Instance.GetCities();
-
-Console.WriteLine(CityProvider.Instance.CityCount());
+ 
 foreach (var item in cities1)
 {
     Console.WriteLine(item.CityName);
 }
 
-var cities2 = CityProvider.Instance.GetCities();
-Console.WriteLine(CityProvider.Instance.CityCount());
+var cities2 = CityProvider.Instance.GetCities(); 
 foreach (var item in cities2)
 {
     Console.WriteLine(item.CityName);
