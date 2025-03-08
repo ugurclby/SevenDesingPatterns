@@ -40,18 +40,16 @@ var request = apiRequestBuilder.WithUrl("https://reqres.in/api/users?page=2")
 
 using (var httpclient = new HttpClient())
 {
+    var request2 = new HttpRequestMessage(request.Metod, request.Url);
 
-}
+    request2.Content = new StringContent(request.Body, System.Text.Encoding.UTF8, "application/json");
 
+    var response = httpclient.SendAsync(request2).Result;
 
+    var sonuc = response.Content.ReadAsStringAsync().Result;
 
-var request2 = new HttpRequestMessage(request.Metod,request.Url);
-
-request2.Content = new StringContent(request.Body,System.Text.Encoding.UTF8,"application/json");
-
-var response = httpclient.SendAsync(request2).Result;
-
-var sonuc = response.Content.ReadAsStringAsync().Result;
+    Console.Write(sonuc);
+} 
 
 
 #endregion
