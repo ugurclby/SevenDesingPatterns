@@ -8,4 +8,4 @@ priz.ElektrikVer(new Buzdolabı());
 
 TelefonAdapter telefonAdapter = new TelefonAdapter(new Telefon());
 priz.ElektrikVer(telefonAdapter); // Telefon'u çalıştırabilmek için adaptör kullanıyoruz.
- 
+ var denem = 1 ;
